@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+p {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.wrapper{
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 35px;
+}
+/* Nav Styles (App.js) */
+.lead {
+  letter-spacing: 0.6vw;
+}
+
+/* Home styles (Home.vue) */
+h1,
+h1 span {
+  font-family: 'Press Start 2P', sans-serif;
+  text-shadow: 2px 2px 0 #0cffff6b, -2px -2px 0 #ff0ce46b;
+  line-height: 0.7;
+}
+h1 {
+  font-size: calc(30px + 8vw);
+}
+h1 span {
+  font-size: calc(4px + 5vw);
+}
+.hero {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero p {
+  padding: 10px;
+}
+#intro {
+  position: relative;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.popUp {
+  position: relative;
+  background: #fbfbfbef;
+  width: 63vw;
+  max-width: 737px;
+  height: 100%;
+  border-radius: 5px;
+}
+.popUp h2 {
+  /* width: 100%; */
+  background: #ff0ce4bd;
+  padding: 10px;
+  border-radius: 5px 5px 0 0 ;
+
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 32px;
+}
+.popUp p {
+    padding: 25px;
+
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+.b-popover img {
+  width: 200px;
+}
+
+/* Toggle Styles (Toggle.vue) */
+#togglerDiv {
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+  align-items: flex-end;
+}
+#modeText {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 16px;
+}
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 65px;
+  height: 36px;
+  cursor: pointer;
+}
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.toggler {
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #15202B;
+  border-radius: 20px;
+  -moz-box-shadow: inset 0 0 5px #000000b5;
+  -webkit-box-shadow: inset 0 0 5px #000000b5;
+  box-shadow: inset 0 0 5px #000000b5; 
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.toggler:before {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: '🌞';
+  font-size: 26px;
+  height: 32px;
+  width: 32px;
+  left: 4px;
+  bottom: 2px;
+  background: #FFF;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+input:checked + .toggler:before {
+  content: '🌙';
+}
+input:checked + .toggler {
+  background: #63e29ce3
+}
+input:focus + toggler {
+box-shadow:0 0 2px #2196F3;
+}
+input:checked + .toggler:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+#introBlurb {
+  width: 68vw;
+  padding: 50px 20px;
+  margin: 0 auto;
+  background: white;
+}
+
+/* Color Mode Styles */
+/* - global Color Mode (App.vue) */
+
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  padding-bottom: 90px;
+  background: url(./assets/7-cloud-png-image.png) no-repeat, linear-gradient(0deg, #42498b 0%,#61aeff 10%, #ffcce9 40%,#ffcebf 80%); 
+  color: #2b2e55;
+  transition: background 2s ease-in-out;
+}
+.dark {
+  background: url(./assets/skyline-silhouette-24.png) repeat-x top, linear-gradient(0deg,#261f27 10%,#464646 80%); 
+  color: #F3F3F3;
+  transition: background 1s ease-in-out;
+}
+.bg-dark {
+    background-color: #261f27a4!important;
+}
+.navBar, .popUp {
+  box-shadow: 0 0 5px #b5b5b58a;
+}
+.card, .popUp {
+  background: #fbfbfbcf;
+}
+.dark .navBar,
+.dark .popUp,
+.dark .card {
+  box-shadow: 0 0 5px #242424;
+}
+.navBar.light a.nav-link, .light .navbar-brand {
+  color: #2b2e55!important;
+}
+.dark h1, .dark h1 span {
+  text-shadow: 2px 2px 0 #0cff109c, -2px -2px 0 #ff0ce4bd; 
+}
+.dark .table {
+  color: #ffffff;
+}
+.dark .card, .dark .popUp {
+  position: relative;
+  background-color: #261f27a4;
+}
+
+/* - Home page */
+.popUp {
+  position: relative;
+  background: #fbfbfbef;
+  width: 63vw;
+  max-width: 737px;
+  height: 100%;
+  border-radius: 5px;
+}
+.dark .popUp {
+  border: 0.5px solid #808080db;
+
+}
+.popUp h2 {
+  background: #ff0ce4bd;
+  padding: 10px;
+  border-radius: 5px 5px 0 0 ;
+
+  color: #ffffff;
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 32px;
+}
+.dark .popUp h2 {
+  background: #1f1f1f;
+  border-bottom: 0.5px solid #808080db;
+  color: #ff6eef;
+}
+.popUp p {
+    padding: 25px;
+
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+/* - Posts Manager Color Mode (PostsManager.vue) */
+.table{
+
+}
+.table thead th {
+    border-bottom: 2px solid #2b2e55;
+}
+.table th, .dark .table td {
+    border-top: 1px solid #2b2e55;
+}
+.dark .table thead th {
+    border-bottom: 2px solid #0cff109c;
+}
+.dark .table th, .dark .table td {
+    border-top: 1px solid #ff0ce4bd;
+}
+
+.form-control {
+  box-shadow: inset 0 0 5px #b5b5b58a;
+}
+.dark .form-control {
+  box-shadow: inset 0 0 5px #242424;
+}
+.dark .form-control {
+  color: white;
+  background-color: #464646;
+  border: 0.5px solid grey;
+  box-shadow: inset 0 0 5px #242424;
+}
+.edit, .delete {
+    font-weight: 700;
+}
+.delete {
+  color: rgb(153, 16, 16);
+
+}
+.dark .delete {
+  color: #fe9f9f;
+}
+.dark .edit {
+  color: #d0d0ff;
+}
+.table-striped tbody tr:nth-of-type(2n+1) {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.dark .table-striped tbody tr:nth-of-type(2n+1) {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries */
+@media only screen and (max-width: 767px) {
+    #togglerDiv {  
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 0.5rem 1rem;
+      flex-direction: initial;
+      align-items: center;
+    }
+    #togglerDiv span {
+      margin-right: 5px;
+    }
+    .toggler::before{
+      left: 1px;
+    }
+    .navbar {
+      justify-content: initial;
+    }
+    .navBar .navbar-brand {
+      margin-left: 10px;
+    }
+}
+@media only screen and (max-width:434px){
+  #togglerDiv {
+    display: none;
+  }
+  #intro {
+    padding: 10px 0;
+  }
+  .wrapper{
+      padding: 0 15px;
+  }
+  .popUp {
+    width: 90vw;
+  }
+}
